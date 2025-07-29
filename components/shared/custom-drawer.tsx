@@ -12,7 +12,6 @@ const CustomDrawer = (props: DrawerContentComponentProps) => {
       </View>
 
       {/* DRAWER ITEMS */}
-
       <DrawerItemList {...props} />
     </DrawerContentScrollView>
   );
