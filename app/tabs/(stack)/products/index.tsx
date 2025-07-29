@@ -16,7 +16,7 @@ export default function ProductsScreen() {
 
             <View className="flex-row justify-between">
               <Text className="text-lg font-work-black">{item.price}</Text>
-              <Link href={`/(stack)/products/${item.id}`} asChild>
+              <Link href={`/tabs/products/${item.id}`} asChild>
                 <Text className="text-lg font-work-medium text-primary">
                   Ver más
                 </Text>

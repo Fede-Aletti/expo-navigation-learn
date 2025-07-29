@@ -15,13 +15,13 @@ export default function HomeScreen() {
         </Text>
 
         <View className="gap-2 mt-4">
-          <Link href="/products" asChild>
+          <Link href="/tabs/products" asChild>
             <CustomButton>Productos</CustomButton>
           </Link>
-          <Link href="/profile" asChild>
+          <Link href="/tabs/profile" asChild>
             <CustomButton color="secondary">Perfil</CustomButton>
           </Link>
-          <Link href="/settings" asChild>
+          <Link href="/tabs/settings" asChild>
             <CustomButton color="tertiary">Configuración</CustomButton>
           </Link>
         </View>
