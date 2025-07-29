@@ -5,7 +5,7 @@ import { FlatList, Text, View } from "react-native";
 
 export default function ProductsScreen() {
   return (
-    <View className="flex-1 p-4 mb-10 gap-4">
+    <View className="flex-1 p-4 pb-10 gap-4">
       <FlatList
         data={products}
         keyExtractor={(item) => item.id}

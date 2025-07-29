@@ -2,9 +2,7 @@ import { Redirect } from "expo-router";
 import "./global.css";
 
 export default function App() {
-
-
-  return <Redirect href="/(stack)/home" />
+  return <Redirect href="/tabs/home" />;
 
   // return (
   //   <SafeAreaView>
