@@ -1,0 +1,38 @@
+import { CustomButton } from "@/components/shared/custom-button";
+import { products } from "@/store/products-store";
+import { Redirect, useLocalSearchParams } from "expo-router";
+import React from "react";
+import { Text, View } from "react-native";
+
+const ProductScreen = () => {
+  const { id } = useLocalSearchParams();
+
+  const product = products.find((p) => p.id === id);
+
+  if (!product) {
+    return <Redirect href="/(stack)/home" />;
+  }
+
+  return (
+    <View className="flex-1 p-4 gap-4">
+      {/* <Image
+        source={{ uri: product?.image }}
+        className="w-full h-64 rounded-lg"
+      /> */}
+      <Text className="text-2xl font-work-black">{product.title}</Text>
+      <Text className="text-lg font-work-medium">{product.description}</Text>
+      <Text className="text-lg font-work-black">{product.price}</Text>
+
+      <CustomButton
+        onPress={() => {
+          console.log("add to cart");
+        }}
+        className="mt-auto mb-8"
+      >
+        Add to cart
+      </CustomButton>
+    </View>
+  );
+};
+
+export default ProductScreen;
