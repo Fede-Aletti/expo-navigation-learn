@@ -10,7 +10,6 @@ const _layout = () => {
         headerShown: false,
         overlayColor: "rgba(0, 0, 0, 0.4)",
         drawerActiveTintColor: "indigo",
-        headerShadowVisible: false,
         sceneStyle: {
           backgroundColor: "white",
         },
@@ -18,9 +17,10 @@ const _layout = () => {
       drawerContent={CustomDrawer}
     >
       <Drawer.Screen
-        name="tabs"
+        name="(tabs)"
         options={{
           title: "Tabs + Stack",
+          headerShown: false,
           drawerIcon: ({ color, size, focused }) => (
             <Ionicons
               name={focused ? "albums" : "albums-outline"}

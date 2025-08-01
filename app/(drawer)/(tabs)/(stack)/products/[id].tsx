@@ -1,17 +1,24 @@
 import { CustomButton } from "@/components/shared/custom-button";
 import { products } from "@/store/products-store";
-import { Redirect, useLocalSearchParams } from "expo-router";
-import React from "react";
+import { Redirect, useLocalSearchParams, useNavigation } from "expo-router";
+import React, { useEffect } from "react";
 import { Text, View } from "react-native";
 
 const ProductScreen = () => {
   const { id } = useLocalSearchParams();
+  const navigation = useNavigation();
 
   const product = products.find((p) => p.id === id);
 
   if (!product) {
-    return <Redirect href="/tabs/home" />;
+    return <Redirect href="/home" />;
   }
+
+  useEffect(() => {
+    navigation.setOptions({
+      title: product.title,
+    });
+  }, [product])
 
   return (
     <View className="flex-1 p-4 gap-4">

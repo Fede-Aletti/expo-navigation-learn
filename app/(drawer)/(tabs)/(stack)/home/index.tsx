@@ -1,10 +1,17 @@
 
 import { CustomButton } from "@/components/shared/custom-button";
-import { Link } from "expo-router";
+import { DrawerActions } from "@react-navigation/native";
+import { Link, useNavigation } from "expo-router";
 import React from "react";
 import { SafeAreaView, Text, View } from "react-native";
 
 export default function HomeScreen() {
+  const navigation = useNavigation();
+
+  const onToggleDrawer = () => {
+    navigation.dispatch(DrawerActions.openDrawer());
+  };
+
   return (
     <SafeAreaView>
       <View className="mt-6 mx-2.5">
@@ -15,15 +22,17 @@ export default function HomeScreen() {
         </Text>
 
         <View className="gap-2 mt-4">
-          <Link href="/drawer/tabs/products" asChild>
+          <Link href="/products" asChild>
             <CustomButton>Productos</CustomButton>
           </Link>
-          <Link href="/drawer/tabs/profile" asChild>
+          <Link href="/profile" asChild>
             <CustomButton color="secondary">Perfil</CustomButton>
           </Link>
-          <Link href="/drawer/tabs/settings" asChild>
+          <Link href="/settings" asChild>
             <CustomButton color="tertiary">Configuración</CustomButton>
           </Link>
+
+          <CustomButton onPress={onToggleDrawer}>Abrir Drawer</CustomButton>
         </View>
       </View>
     </SafeAreaView>
